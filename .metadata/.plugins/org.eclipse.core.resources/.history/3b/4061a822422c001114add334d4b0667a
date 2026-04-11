@@ -1,0 +1,16 @@
+spring.application.name=FoodAnalyzer
+# Server Configuration
+server.port=8080
+
+# File Upload Configuration (IMPORTANT for image upload)
+spring.servlet.multipart.enabled=true
+spring.servlet.multipart.max-file-size=10MB
+spring.servlet.multipart.max-request-size=10MB
+
+# Logging (optional but useful)
+logging.level.org.springframework=INFO
+
+
+spoonacular.api.key=ebefff85324b42ad81ac8a13ddb63423
+@Value("${spoonacular.api.key}")
+private String apiKey;

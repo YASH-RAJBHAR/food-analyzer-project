@@ -1,0 +1,69 @@
+package com.example.foodanalyzer.controller;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.http.*;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.example.foodanalyzer.helper.MultipartInputStreamFileResource;
+
+@Service
+public class FoodController {
+
+    private final String PYTHON_API = "http://127.0.0.1:5001/predict";
+
+    // ✅ Better: read API key from properties
+    @Value("${spoonacular.api.key}")
+    private String apiKey;
+
+    public String analyze(MultipartFile file) {
+        try {
+            RestTemplate restTemplate = new RestTemplate();
+
+            // 🔹 STEP 1: Send image to Python AI
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.MULTIPART_FORM_DATA);
+
+            MultiValueMap<String, Object> body = new LinkedMultiValueMap<>();
+            body.add("image",
+                    new MultipartInputStreamFileResource(
+                            file.getInputStream(),
+                            file.getOriginalFilename()
+                    ));
+
+            HttpEntity<MultiValueMap<String, Object>> request =
+                    new HttpEntity<>(body, headers);
+
+            ResponseEntity<String> response =
+                    restTemplate.postForEntity(PYTHON_API, request, String.class);
+
+            // 🔹 Extract food name safely
+            String responseBody = response.getBody();
+
+            if (responseBody == null || responseBody.isEmpty()) {
+                return "{\"error\":\"No response from AI model\"}";
+            }
+
+            // Example: {"food":"banana"}
+            String foodName = responseBody
+                    .replaceAll("[^a-zA-Z]", "")
+                    .toLowerCase();
+
+            // 🔹 STEP 2: Call Spoonacular API
+            String url = "https://api.spoonacular.com/recipes/guessNutrition?title="
+                    + foodName + "&apiKey=" + apiKey;
+
+            ResponseEntity<String> nutritionResponse =
+                    restTemplate.getForEntity(url, String.class);
+
+            return nutritionResponse.getBody();
+
+        } catch (Exception e) {
+            e.printStackTrace(); // helpful for debugging
+            return "{\"error\":\"" + e.getMessage() + "\"}";
+        }
+    }
+}

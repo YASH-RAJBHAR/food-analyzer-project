@@ -1,0 +1,19 @@
+java : 
+PS D:\Projects\FoodAnalyzer\FoodAnalyzer> 
+
+.\mvnw.cmd spring-boot:run
+
+
+python ai : 
+
+cd D:\Projects\FoodAnalyzer\smart-food-analyzer\python-ai
+
+venv\Scripts\activate
+
+python app.py
+
+React :
+
+cd food-analyzer-ui                      
+
+npm start       
