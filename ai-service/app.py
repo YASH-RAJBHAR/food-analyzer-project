@@ -4,16 +4,15 @@ import os
 
 app = Flask(__name__)
 
-# ✅ Test route (VERY IMPORTANT)
+# ✅ Test route
 @app.route('/')
 def home():
     return "Python AI is running 🚀"
 
-# ✅ Main prediction API
+# ✅ Prediction API
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
-        # 🔹 Check file exists
         if 'image' not in request.files:
             return jsonify({"error": "No image file provided"}), 400
 
@@ -22,14 +21,11 @@ def predict():
         if file.filename == '':
             return jsonify({"error": "Empty file name"}), 400
 
-        # 🔹 Save file temporarily
         filepath = "temp.jpg"
         file.save(filepath)
 
-        # 🔹 Predict
         food = predict_food(filepath)
 
-        # 🔹 Delete temp file (cleanup)
         if os.path.exists(filepath):
             os.remove(filepath)
 
@@ -40,4 +36,5 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5001, debug=True)
+    port = int(os.environ.get("PORT", 5001))
+    app.run(host="0.0.0.0", port=port)
