@@ -1,10 +1,32 @@
 # 🍽️ NutriSnap AI — AI Food & Nutrition Analyzer
 
-**Snap Your Food. Understand Your Nutrition.** A full-stack AI-powered food recognition, nutrition analysis, and health coaching platform fine-tuned for Indian & Global regional cuisine.
+> **"Snap Your Food. Understand Your Nutrition."**
+
+Welcome to **NutriSnap AI**, a full-stack, AI-powered food recognition, nutrition analysis, and health coaching platform fine-tuned for Indian regional street foods and global cuisine worldwide.
+
+🌐 **Live Application URL**: [https://nutrisnap-ai-web.onrender.com](https://nutrisnap-ai-web.onrender.com)  
+👨‍💻 **Developer**: **Yash Rajbhar** ([yashrajbhar316@gmail.com](mailto:yashrajbhar316@gmail.com))  
+🐙 **GitHub Repository**: [https://github.com/YASH-RAJBHAR/food-analyzer-project](https://github.com/YASH-RAJBHAR/food-analyzer-project)
 
 ---
 
-## 🏗️ Architecture & Communication Flow
+## 🌟 Key Features Overview
+
+| Feature Tab | Description | Visual Preview |
+| :--- | :--- | :---: |
+| **🏠 Home & Scan** | AI Vision Scanner, Live Camera Viewfinder & Dish Recognition | ![Vada Pav](frontend/public/images/dishes/vada_pav.jpg) |
+| **🇮🇳 Indian Special** | Fine-tuned AI model for Indian street food (Vada Pav, Pav Bhaji, Dosa, Biryani, Chole Bhature, Samosa) | ![Chole Bhature](frontend/public/images/dishes/chole_bhature.jpg) |
+| **🌐 World Food** | Global regional dish identification (Pizza, Cheeseburger, Fresh Sushi) | ![Pizza](frontend/public/images/dishes/pizza.jpg) |
+| **📓 Food Diary** | Daily calorie budget progress bar (2000 kcal), meal logging & history table | ![Poha](frontend/public/images/dishes/poha.jpg) |
+| **🥗 14-Diet Matrix** | Evaluates 14 dietary rules in real-time (Vegan, Keto, Low Carb, Diabetic, Gluten-Free, Halal, Kosher) | ![Masala Dosa](frontend/public/images/dishes/masala_dosa.jpg) |
+| **📷 Barcode / OCR** | Live UPC/EAN OpenFoodFacts barcode lookup + ingredient label OCR scanner | ![Rajma Chawal](frontend/public/images/dishes/rajma_chawal.jpg) |
+| **🎯 Goals & Water** | Interactive hydration log (`+250ml`), target calorie calculator & macro sliders | ![Chicken Biryani](frontend/public/images/dishes/chicken_biryani.jpg) |
+| **🤖 AI Coach** | Chat with Chef Bot powered by Gemini 1.5 Flash + typo-tolerant knowledge engine | ![Pani Puri](frontend/public/images/dishes/pani_puri.jpg) |
+| **📈 Analytics** | Upload history trends, macro pie chart breakdown & average health score | ![Samosa](frontend/public/images/dishes/samosa.jpg) |
+
+---
+
+## 🏗️ System Architecture & Data Flow
 
 ```
                                ┌─────────────────────────┐
@@ -13,16 +35,16 @@
                                             │
                                             ▼
                                ┌─────────────────────────┐
-                               │   React SaaS Frontend   │
-                               │  (Render Static Site)   │
+                               │   React 18 SaaS App     │
+                               │ (nutrisnap-ai-web)      │
                                └────────────┬────────────┘
                                             │
                            HTTP Requests (REACT_APP_BACKEND_URL)
                                             │
                                             ▼
                                ┌─────────────────────────┐
-                               │   Spring Boot Backend   │
-                               │  (Render Web Service)   │
+                               │   Spring Boot 3 Backend │
+                               │ (food-analyzer-backend) │
                                └────────────┬────────────┘
                                             │
                           HTTP API Requests (FLASK_AI_URL)
@@ -30,7 +52,7 @@
                                             ▼
                                ┌─────────────────────────┐
                                │    Python AI Service    │
-                               │  (Render Web Service)   │
+                               │ (food-analyzer-ai)      │
                                └────────────┬────────────┘
                                             │
                        ┌────────────────────┴────────────────────┐
@@ -44,74 +66,9 @@
 
 ---
 
-## 🚀 Render Cloud Deployment Guide
+## 🚀 Easy Local Setup (Run in 3 Steps)
 
-Follow these exact steps to host the complete application on [Render](https://render.com).
-
-Repository URL: `https://github.com/YASH-RAJBHAR/food-analyzer-project`
-
----
-
-### Step 1: Deploy Python AI Service (`ai-service`)
-
-1. Go to your **Render Dashboard** $\rightarrow$ Click **New +** $\rightarrow$ Select **Web Service**.
-2. Connect your GitHub repository (`food-analyzer-project`).
-3. Configure the service settings:
-   - **Name**: `food-analyzer-ai-service`
-   - **Region**: Oregon (US West) or closest region
-   - **Root Directory**: `ai-service` *(Must be the folder name `ai-service`)*
-   - **Runtime**: `Python 3`
-   - **Build Command**: `pip install -r requirements.txt`
-   - **Start Command**: `gunicorn --bind 0.0.0.0:$PORT app:app`
-4. Add **Environment Variables**:
-   - `PORT`: `5001`
-   - `GEMINI_API_KEY`: *(Optional: Your Gemini Vision API key)*
-5. Click **Create Web Service**.
-6. Copy the deployed service URL (e.g. `https://food-analyzer-ai-service.onrender.com`).
-
----
-
-### Step 2: Deploy Spring Boot Backend (`backend`)
-
-1. Go to your **Render Dashboard** $\rightarrow$ Click **New +** $\rightarrow$ Select **Web Service**.
-2. Connect your GitHub repository (`food-analyzer-project`).
-3. Configure the service settings:
-   - **Name**: `food-analyzer-backend`
-   - **Region**: Same region as AI Service
-   - **Root Directory**: `backend`
-   - **Runtime**: `Java` (or `Docker` / `Environment Native`)
-   - **Build Command**: `./mvnw clean package -DskipTests`
-   - **Start Command**: `java -jar target/food-analyzer-backend-0.0.1-SNAPSHOT.jar`
-4. Add **Environment Variables**:
-   - `PORT`: `8080`
-   - `FLASK_AI_URL`: `https://food-analyzer-ai-service.onrender.com/predict` *(Use your deployed AI Service URL + `/predict`)*
-   - `CORS_ALLOWED_ORIGINS`: `*` *(Or your deployed Frontend URL once created)*
-   - `SPOONACULAR_API_KEY`: *(Optional)*
-5. Click **Create Web Service**.
-6. Copy the deployed backend service URL (e.g. `https://food-analyzer-backend.onrender.com`).
-
----
-
-### Step 3: Deploy React Frontend (`frontend`)
-
-1. Go to your **Render Dashboard** $\rightarrow$ Click **New +** $\rightarrow$ Select **Static Site** (or **Web Service**).
-2. Connect your GitHub repository (`food-analyzer-project`).
-3. Configure the service settings:
-   - **Name**: `nutrisnap-ai-web`
-   - **Root Directory**: `frontend`
-   - **Build Command**: `npm run build`
-   - **Publish Directory**: `build`
-4. Add **Environment Variables**:
-   - `NODE_VERSION`: `18.20.0`
-   - `REACT_APP_BACKEND_URL`: `https://food-analyzer-backend.onrender.com` *(Use your deployed Spring Boot URL)*
-5. Click **Create Static Site**.
-6. Your live site will be accessible at: `https://nutrisnap-ai-web.onrender.com`
-
----
-
-## 🛠️ Local Development Setup
-
-### 1. Python AI Service
+### Step 1: Start Python AI Service
 ```powershell
 cd ai-service
 python -m venv venv
@@ -119,37 +76,72 @@ python -m venv venv
 pip install -r requirements.txt
 python app.py
 ```
-*Service runs on `http://127.0.0.1:5001`*
+*AI Service runs locally on `http://127.0.0.1:5001`*
 
-### 2. Spring Boot Backend
+### Step 2: Start Java Spring Boot Backend
 ```powershell
 cd backend
 mvnw.cmd spring-boot:run
 ```
-*Service runs on `http://localhost:8080`*
+*Backend runs locally on `http://localhost:8080`*
 
-### 3. React Frontend
+### Step 3: Start React Frontend
 ```powershell
 cd frontend
 npm install
 npm start
 ```
-*App opens on `http://localhost:3000`*
+*Frontend opens automatically on `http://localhost:3000`*
 
 ---
 
-## 📋 Environment Variables Summary
+## ☁️ Render Cloud Deployment Guide
 
-| Variable Name | Component | Description | Example |
+NutriSnap AI is configured for 1-click cloud hosting on [Render](https://render.com).
+
+### 1. Python AI Web Service (`ai-service`)
+- **Root Directory**: `ai-service`
+- **Runtime**: `Python 3`
+- **Build Command**: `pip install -r requirements.txt`
+- **Start Command**: `gunicorn --bind 0.0.0.0:$PORT app:app`
+- **Environment Variables**: `PORT=5001`, `GEMINI_API_KEY` *(Optional)*
+
+### 2. Java Spring Boot Web Service (`backend`)
+- **Root Directory**: `backend`
+- **Runtime**: `Docker`
+- **Dockerfile Path**: `Dockerfile`
+- **Environment Variables**:
+  - `PORT`: `8080`
+  - `FLASK_AI_URL`: `https://food-analyzer-ai-service.onrender.com/predict`
+  - `CORS_ALLOWED_ORIGINS`: `https://nutrisnap-ai-web.onrender.com`
+
+### 3. React Frontend Static Site (`frontend`)
+- **Root Directory**: `frontend`
+- **Build Command**: `npm run build`
+- **Publish Directory**: `build`
+- **Environment Variables**:
+  - `NODE_VERSION`: `18.20.0`
+  - `REACT_APP_BACKEND_URL`: `https://food-analyzer-backend.onrender.com`
+
+---
+
+## ⚙️ Environment Variables Summary
+
+| Variable Name | Service | Description | Example Value |
 | :--- | :--- | :--- | :--- |
-| `REACT_APP_BACKEND_URL` | Frontend | URL of deployed Spring Boot backend | `https://food-analyzer-backend.onrender.com` |
-| `FLASK_AI_URL` | Backend | URL of deployed Python AI service prediction endpoint | `https://food-analyzer-ai-service.onrender.com/predict` |
-| `CORS_ALLOWED_ORIGINS` | Backend | Cross-Origin resource sharing control | `https://food-analyzer-frontend.onrender.com` |
-| `SPOONACULAR_API_KEY` | Backend | Optional Spoonacular API Key | `your_key_here` |
-| `GEMINI_API_KEY` | AI Service | Optional Gemini 1.5 Vision / AI Coach Agent Key | `your_key_here` |
-| `PORT` | All Services | Dynamic listening port injected by Render | `8080` / `5001` |
+| `REACT_APP_BACKEND_URL` | Frontend | Deployed Spring Boot URL | `https://food-analyzer-backend.onrender.com` |
+| `FLASK_AI_URL` | Backend | Deployed Python AI prediction endpoint | `https://food-analyzer-ai-service.onrender.com/predict` |
+| `CORS_ALLOWED_ORIGINS` | Backend | Allowed origin URL for CORS requests | `https://nutrisnap-ai-web.onrender.com` |
+| `PORT` | All | Dynamic listening port | `8080` / `5001` |
 
 ---
 
-## 🛡️ License & Credits
-Built for foodies, health enthusiasts, and nutrition tracking worldwide.
+## 👨‍💻 Author & Contact
+
+**NutriSnap AI** is developed and maintained by **Yash Rajbhar**.
+
+- ✉️ **Email**: [yashrajbhar316@gmail.com](mailto:yashrajbhar316@gmail.com)
+- 🐙 **GitHub**: [https://github.com/YASH-RAJBHAR/food-analyzer-project](https://github.com/YASH-RAJBHAR/food-analyzer-project)
+- 🌐 **Live Website**: [https://nutrisnap-ai-web.onrender.com](https://nutrisnap-ai-web.onrender.com)
+
+*Built with ❤️ for Foodies & Health Enthusiasts Worldwide! 🎉*
