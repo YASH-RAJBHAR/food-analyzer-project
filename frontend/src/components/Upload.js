@@ -279,15 +279,37 @@ function Upload({ selectedDish }) {
   };
 
   const handleFileChange = (event) => {
-    const selected = event.target.files[0];
-    setError(null);
-    setAnalysis(null);
-    setUserReaction(null);
-    setResultImgError(false);
-    setIsUserConfirmed(null);
+    const selected = event.target.files && event.target.files[0];
     if (selected) {
+      setError(null);
+      setAnalysis(null);
+      setUserReaction(null);
+      setResultImgError(false);
+      setIsUserConfirmed(null);
       setFile(selected);
       setPreview(URL.createObjectURL(selected));
+      analyzeImageFile(selected);
+    }
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      const droppedFile = e.dataTransfer.files[0];
+      setError(null);
+      setAnalysis(null);
+      setUserReaction(null);
+      setResultImgError(false);
+      setIsUserConfirmed(null);
+      setFile(droppedFile);
+      setPreview(URL.createObjectURL(droppedFile));
+      analyzeImageFile(droppedFile);
     }
   };
 
@@ -332,7 +354,11 @@ function Upload({ selectedDish }) {
         )}
 
         {/* Dropzone Box */}
-        <div className={`cartoon-dropzone ${loading ? "is-scanning" : ""}`}>
+        <div
+          className={`cartoon-dropzone ${loading ? "is-scanning" : ""}`}
+          onDragOver={handleDragOver}
+          onDrop={handleDrop}
+        >
           {loading && <div className="scanning-laser-beam"></div>}
 
           {preview ? (
@@ -362,7 +388,7 @@ function Upload({ selectedDish }) {
             <label htmlFor="food-file-input" className="cartoon-outline-btn">
               📁 Choose Photo File
             </label>
-            <button className="cartoon-action-btn" onClick={() => analyzeImageFile()} disabled={loading}>
+            <button className="cartoon-action-btn" onClick={() => analyzeImageFile(file)} disabled={loading}>
               {loading ? "⚡ Scanning Image..." : "⚡ Analyze Food Photo 🎉"}
             </button>
           </div>
