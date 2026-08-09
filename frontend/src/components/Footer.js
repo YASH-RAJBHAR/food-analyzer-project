@@ -37,7 +37,7 @@ function Footer({ activeTab, setActiveTab }) {
         {/* Column 1: Brand & Mascot */}
         <div className="footer-brand-col">
           <div className="footer-logo-row">
-            <span className="footer-logo-icon">🍽️</span>
+            <img src="/favicon.svg" alt="NutriSnap AI Logo" style={{ width: 44, height: 44, borderRadius: 12, filter: "drop-shadow(0 4px 8px rgba(255, 107, 53, 0.3))" }} />
             <span className="footer-logo-title">NutriSnap AI</span>
           </div>
           <p className="footer-tagline">

@@ -21,7 +21,7 @@ function App() {
       {/* NutriSnap AI Header Navbar */}
       <header className="cartoon-header">
         <div className="header-brand" onClick={() => setActiveTab("home")} style={{ cursor: "pointer" }}>
-          <span className="brand-logo">🍽️</span>
+          <img src="/favicon.svg" alt="NutriSnap AI Logo" className="brand-logo-img" style={{ width: 48, height: 48, borderRadius: 14, filter: "drop-shadow(0 4px 10px rgba(255, 107, 53, 0.35))" }} />
           <div>
             <h1 className="brand-title">NutriSnap AI</h1>
             <p className="brand-tagline">Snap Your Food. Understand Your Nutrition.</p>

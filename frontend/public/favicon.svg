@@ -1,14 +1,52 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <circle cx="50" cy="50" r="48" fill="#FF6B35" />
-  <circle cx="50" cy="50" r="41" fill="#FFFFFF" />
-  <!-- Outer Plate Rim -->
-  <circle cx="50" cy="50" r="32" stroke="#2EC4B6" stroke-width="3" fill="none" stroke-dasharray="8 4" />
-  <!-- Plate Center -->
-  <circle cx="50" cy="50" r="22" fill="#FFF9F2" />
-  <!-- Fork and Knife AI Icon -->
-  <path d="M 38 35 V 50 M 35 35 V 43 H 41 V 35" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round" fill="none" />
-  <path d="M 60 35 V 50 M 60 35 C 64 35, 64 43, 60 43" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round" fill="none" />
-  <!-- AI Sparkles -->
-  <circle cx="50" cy="62" r="3" fill="#2EC4B6" />
-  <path d="M 50 56 L 50 68 M 44 62 L 56 62" stroke="#2EC4B6" stroke-width="2" stroke-linecap="round" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7E47" />
+      <stop offset="100%" stop-color="#FF521B" />
+    </linearGradient>
+    
+    <!-- Teal Accent Gradient -->
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2EC4B6" />
+      <stop offset="100%" stop-color="#0F9F90" />
+    </linearGradient>
+
+    <!-- Gold Sparkle Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD166" />
+      <stop offset="100%" stop-color="#FF9F1C" />
+    </linearGradient>
+
+    <!-- Soft Drop Shadow -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#000000" flood-opacity="0.18" />
+    </filter>
+  </defs>
+
+  <!-- Outer Rounded Squircle Container -->
+  <rect x="6" y="6" width="108" height="108" rx="30" fill="url(#bgGrad)" filter="url(#shadow)" />
+
+  <!-- Outer Camera Lens Ring (Teal Accent) -->
+  <circle cx="60" cy="60" r="42" fill="none" stroke="url(#tealGrad)" stroke-width="4" stroke-dasharray="14 6" opacity="0.9" />
+
+  <!-- Inner White Plate Circle -->
+  <circle cx="60" cy="60" r="34" fill="#FFFFFF" />
+
+  <!-- Inner Warm Plate Rim -->
+  <circle cx="60" cy="60" r="28" fill="#FFF9F2" stroke="#FFE3D1" stroke-width="2" />
+
+  <!-- Center Camera Aperture / Fork & Knife Icon -->
+  <!-- Fork (Left) -->
+  <path d="M 46 42 V 64 M 42 42 V 53 H 50 V 42" stroke="#FF521B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  
+  <!-- Knife (Right) -->
+  <path d="M 74 42 V 64 M 74 42 C 80 42, 80 53, 74 53" stroke="#FF521B" stroke-width="3.5" stroke-linecap="round" fill="none" />
+
+  <!-- Center AI Camera Shutter Sparkle Lens -->
+  <circle cx="60" cy="74" r="5" fill="url(#tealGrad)" />
+  
+  <!-- Top Right AI Sparkle Star -->
+  <path d="M 84 24 L 86 30 L 92 32 L 86 34 L 84 40 L 82 34 L 76 32 L 82 30 Z" fill="url(#goldGrad)" />
+  <path d="M 30 78 L 31.5 82 L 35.5 83.5 L 31.5 85 L 30 89 L 28.5 85 L 24.5 83.5 L 28.5 82 Z" fill="url(#goldGrad)" opacity="0.85" />
 </svg>
