@@ -222,6 +222,40 @@ export const FOOD_DATABASE = [
     sugar: 1.2,
     sodium: 420,
     funSticker: "🍣 Ocean Fresh!"
+  },
+  {
+    id: "taco",
+    name: "Mexican Taco",
+    image: "/images/foods/taco.jpg",
+    description: "Warm corn tortilla folded around seasoned grilled meat, salsa, cilantro, onion & fresh lime squeeze.",
+    region: "Oaxaca",
+    country: "Mexico",
+    category: "Mexican Street Food",
+    calories: 240,
+    protein: 14.0,
+    carbs: 22.0,
+    fat: 11.0,
+    fiber: 3.2,
+    sugar: 1.5,
+    sodium: 390,
+    funSticker: "🌮 Fiesta Crunch!"
+  },
+  {
+    id: "tomato",
+    name: "Fresh Tomato Salad",
+    image: "/images/foods/tomato.png",
+    description: "Juicy vine-ripened red tomatoes sliced fresh with extra virgin olive oil, sea salt, oregano & balsamic glaze.",
+    region: "Mediterranean",
+    country: "Global",
+    category: "Healthy Salad",
+    calories: 85,
+    protein: 2.0,
+    carbs: 10.0,
+    fat: 4.5,
+    fiber: 2.8,
+    sugar: 6.0,
+    sodium: 140,
+    funSticker: "🍅 Fresh & Juicy!"
   }
 ];
 

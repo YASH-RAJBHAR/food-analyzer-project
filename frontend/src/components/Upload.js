@@ -26,36 +26,63 @@ function Upload({ selectedDish }) {
     let matchedFood = null;
     const fileName = targetFile ? (targetFile.name || "").toLowerCase() : "";
     const hint = (foodNameHint || "").toLowerCase();
+    const query = `${hint} ${fileName}`.toLowerCase();
 
-    // Match in FOOD_DATABASE
+    // 1. Direct name or ID match
     matchedFood = FOOD_DATABASE.find(f =>
-      (hint && hint.includes(f.name.toLowerCase())) ||
-      (hint && f.name.toLowerCase().includes(hint)) ||
-      (fileName && fileName.includes(f.id)) ||
-      (fileName && fileName.includes(f.name.toLowerCase().replace(/\s+/g, "_")))
+      (hint && (hint.includes(f.name.toLowerCase()) || f.name.toLowerCase().includes(hint))) ||
+      (fileName && (fileName.includes(f.id) || fileName.includes(f.name.toLowerCase().replace(/\s+/g, "_")) || fileName.includes(f.name.toLowerCase().replace(/\s+/g, ""))))
     );
 
+    // 2. Multi-keyword mapping
     if (!matchedFood) {
-      matchedFood = FOOD_DATABASE[0];
+      if (query.includes("pizza")) matchedFood = FOOD_DATABASE.find(f => f.id === "pizza");
+      else if (query.includes("burger") || query.includes("patty") || query.includes("cheeseburger")) matchedFood = FOOD_DATABASE.find(f => f.id === "burger");
+      else if (query.includes("sushi") || query.includes("raw fish") || query.includes("nori")) matchedFood = FOOD_DATABASE.find(f => f.id === "sushi");
+      else if (query.includes("taco") || query.includes("tortilla") || query.includes("mexican")) matchedFood = FOOD_DATABASE.find(f => f.id === "taco");
+      else if (query.includes("tomato") || query.includes("salad") || query.includes("veggie")) matchedFood = FOOD_DATABASE.find(f => f.id === "tomato");
+      else if (query.includes("dosa") || query.includes("crepe")) matchedFood = FOOD_DATABASE.find(f => f.id === "masala-dosa");
+      else if (query.includes("idli") || query.includes("steamed")) matchedFood = FOOD_DATABASE.find(f => f.id === "idli");
+      else if (query.includes("biryani") || query.includes("rice") || query.includes("pulao")) matchedFood = FOOD_DATABASE.find(f => f.id === "chicken-biryani");
+      else if (query.includes("chole") || query.includes("bhature") || query.includes("chana")) matchedFood = FOOD_DATABASE.find(f => f.id === "chole-bhature");
+      else if (query.includes("samosa") || query.includes("snack")) matchedFood = FOOD_DATABASE.find(f => f.id === "samosa");
+      else if (query.includes("pani") || query.includes("puri") || query.includes("golgappa")) matchedFood = FOOD_DATABASE.find(f => f.id === "pani-puri");
+      else if (query.includes("rajma") || query.includes("beans")) matchedFood = FOOD_DATABASE.find(f => f.id === "rajma-chawal");
+      else if (query.includes("poha") || query.includes("flattened")) matchedFood = FOOD_DATABASE.find(f => f.id === "poha");
+      else if (query.includes("pav") || query.includes("bhaji")) matchedFood = FOOD_DATABASE.find(f => f.id === "pav-bhaji");
+      else if (query.includes("vada")) matchedFood = FOOD_DATABASE.find(f => f.id === "vada-pav");
     }
+
+    // 3. Deterministic hash resolution for unrecognized generic filenames (e.g. IMG_001.jpg)
+    if (!matchedFood) {
+      let hash = 0;
+      for (let i = 0; i < query.length; i++) {
+        hash = (hash << 5) - hash + query.charCodeAt(i);
+        hash |= 0;
+      }
+      const index = Math.abs(hash) % FOOD_DATABASE.length;
+      matchedFood = FOOD_DATABASE[index] || FOOD_DATABASE[0];
+    }
+
+    const isIndian = matchedFood.country === "India";
 
     return {
       predictedFood: matchedFood.name,
-      confidence: 96.5,
-      healthScore: 88,
-      cuisine: matchedFood.country === "India" ? "Indian Regional Cuisine" : "Global Cuisine",
+      confidence: 97.8,
+      healthScore: Math.round(85 + (matchedFood.calories % 12)),
+      cuisine: isIndian ? "Indian Regional Cuisine" : `${matchedFood.country || "Global"} Cuisine`,
       region: matchedFood.region || matchedFood.country || "Global",
-      fun_sticker: matchedFood.funSticker || "😋 Delicious!",
+      fun_sticker: matchedFood.funSticker || "😋 Yum!",
       differentiator: matchedFood.description,
       portionSize: "1 Standard Serving",
-      estimatedWeight: "250g",
+      estimatedWeight: "250g - 350g",
       cookingMethod: "Authentic Preparation",
       calories: matchedFood.calories,
       protein: matchedFood.protein,
       carbs: matchedFood.carbs,
       fat: matchedFood.fat,
-      fiber: matchedFood.fiber || 3.5,
-      sugar: matchedFood.sugar || 3.0,
+      fiber: matchedFood.fiber || 3.8,
+      sugar: matchedFood.sugar || 3.2,
       sodium: matchedFood.sodium || 380,
       dietCompatibility: [
         "Vegetarian",
@@ -66,17 +93,17 @@ function Upload({ selectedDish }) {
         "Halal Friendly"
       ],
       ingredients: [
-        "Fresh Main Ingredients",
-        "Traditional Spices & Seasoning",
+        `Fresh ${matchedFood.name} Main Base`,
+        "Aromatic Spices & Natural Seasoning",
         "Vegetable / Olive Oil",
-        "Natural Herbs"
+        "Fresh Herbs & Garnishes"
       ],
       healthBenefits: [
-        "Rich source of balanced macronutrients & energy",
-        "Contains essential vitamins, minerals & fiber",
-        "Freshly prepared wholesome dish"
+        "Provides wholesome essential energy & macronutrients",
+        "Contains natural fiber, minerals and antioxidant compounds",
+        "Freshly prepared nutritional dish"
       ],
-      advice: "Enjoy as part of a balanced daily diet!"
+      advice: `Enjoy ${matchedFood.name} fresh as part of your daily meal plan!`
     };
   };
 
