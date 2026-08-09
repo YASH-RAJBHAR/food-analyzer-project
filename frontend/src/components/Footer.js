@@ -65,16 +65,30 @@ function Footer({ activeTab, setActiveTab }) {
           </ul>
         </div>
 
-        {/* Column 4: Tech Stack */}
+        {/* Column 4: Developer & Contact */}
         <div className="footer-links-col">
-          <h4 className="footer-col-header">Tech Architecture ⚙️</h4>
-          <div className="footer-tech-stack">
+          <h4 className="footer-col-header">Developer & Contact 👨‍💻</h4>
+          <div className="footer-dev-card" style={{ background: "var(--pill-bg)", padding: 14, borderRadius: 16, border: "2px solid var(--card-border)" }}>
+            <p style={{ fontWeight: 800, fontSize: "0.95rem", marginBottom: 6, color: "var(--primary-color)" }}>
+              👨‍💻 Developer: Yash Rajbhar
+            </p>
+            <p style={{ fontSize: "0.86rem", marginBottom: 6 }}>
+              ✉️ <strong>Contact:</strong>{" "}
+              <a href="mailto:yashrajbhar033@gmail.com" style={{ color: "var(--secondary-color)", fontWeight: 700, textDecoration: "none" }}>
+                yashrajbhar033@gmail.com
+              </a>
+            </p>
+            <p style={{ fontSize: "0.86rem" }}>
+              🐙 <strong>GitHub:</strong>{" "}
+              <a href="https://github.com/YASH-RAJBHAR/food-analyzer-project" target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-main)", fontWeight: 700 }}>
+                YASH-RAJBHAR
+              </a>
+            </p>
+          </div>
+          <div className="footer-tech-stack" style={{ marginTop: 12 }}>
             <span className="tech-chip">🚀 Spring Boot 3</span>
             <span className="tech-chip">🐍 Python PyTorch AI</span>
             <span className="tech-chip">⚛️ React 18 SaaS UI</span>
-            <span className="tech-chip">🗄️ H2 Database</span>
-            <span className="tech-chip">👁️ OpenCV & Tesseract</span>
-            <span className="tech-chip">🎨 Playful 3D SaaS Design</span>
           </div>
         </div>
       </div>
@@ -85,7 +99,7 @@ function Footer({ activeTab, setActiveTab }) {
           ⚠️ <strong>Disclaimer:</strong> FoodAI Buddy provides informational nutrition estimates only and is not intended to provide medical advice.
         </div>
         <div className="footer-copyright">
-          © {new Date().getFullYear()} <strong>FoodAI Buddy</strong> • Built with ❤️ for Foodies & Health Enthusiasts Worldwide 🎉
+          © {new Date().getFullYear()} <strong>FoodAI Buddy</strong> • Developed by <strong>Yash Rajbhar</strong> (yashrajbhar033@gmail.com) • Built with ❤️ for Foodies Worldwide 🎉
         </div>
       </div>
     </footer>
