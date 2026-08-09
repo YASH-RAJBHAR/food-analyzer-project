@@ -3,7 +3,7 @@ import DietMatrix from "./DietMatrix";
 import { getVerifiedFoodImage } from "../utils/foodImageMap";
 import { API_BASE_URL } from "../config";
 
-function Upload() {
+function Upload({ selectedDish }) {
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(null);
   const [analysis, setAnalysis] = useState(null);
@@ -62,6 +62,13 @@ function Upload() {
       return () => clearInterval(timer);
     }
   }, [analysis]);
+
+  // Auto-analyze when dish is selected from Indian or World showcase
+  useEffect(() => {
+    if (selectedDish) {
+      handleManualCorrection(selectedDish);
+    }
+  }, [selectedDish]);
 
   // Clean up camera stream on component unmount
   useEffect(() => {

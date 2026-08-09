@@ -15,6 +15,16 @@ import "./App.css";
 function App() {
   const [activeTab, setActiveTab] = useState("home");
   const [darkMode, setDarkMode] = useState(false);
+  const [selectedDishForScan, setSelectedDishForScan] = useState(null);
+
+  const handleSelectDish = (dishName) => {
+    setSelectedDishForScan(dishName);
+    setActiveTab("home");
+    setTimeout(() => {
+      const el = document.querySelector(".scanner-main-card");
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }, 150);
+  };
 
   return (
     <div className={`app-shell ${darkMode ? "dark-theme" : "light-theme"}`}>
@@ -107,16 +117,17 @@ function App() {
               }}
               onExploreClick={() => setActiveTab("indian")}
             />
-            <Upload />
-            <IndianFoodShowcase onSelectDish={(dish) => console.log("Selected dish:", dish)} />
+            <Upload selectedDish={selectedDishForScan} />
+            <IndianFoodShowcase onSelectDish={handleSelectDish} />
+            <WorldFoodShowcase onSelectDish={handleSelectDish} />
           </>
         )}
 
         {activeTab === "indian" && (
-          <IndianFoodShowcase onSelectDish={(dish) => console.log("Selected dish:", dish)} />
+          <IndianFoodShowcase onSelectDish={handleSelectDish} />
         )}
         {activeTab === "world" && (
-          <WorldFoodShowcase onSelectDish={(dish) => console.log("Selected dish:", dish)} />
+          <WorldFoodShowcase onSelectDish={handleSelectDish} />
         )}
         {activeTab === "diary" && <FoodDiaryView />}
         {activeTab === "matrix" && (
