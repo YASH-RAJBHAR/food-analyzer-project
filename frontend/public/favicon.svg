@@ -1,69 +1,99 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 450" width="100%" height="100%">
   <defs>
-    <!-- Background Outer Ring Gradient -->
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FF6B35"/>
-      <stop offset="50%" stop-color="#FF8C42"/>
-      <stop offset="100%" stop-color="#FF9F1C"/>
-    </linearGradient>
+    <!-- Soft Drop Shadow -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0B1B3D" flood-opacity="0.15"/>
+    </filter>
 
-    <!-- Inner Lens Ring Gradient -->
-    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#2EC4B6"/>
-      <stop offset="100%" stop-color="#20A499"/>
-    </linearGradient>
-
-    <!-- Plate Glow & Shading -->
-    <radialGradient id="plateGlow" cx="50%" cy="50%" r="50%">
+    <!-- Glass Glow -->
+    <radialGradient id="glassGlow" cx="40%" cy="40%" r="60%">
       <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="70%" stop-color="#FFF8F2"/>
-      <stop offset="100%" stop-color="#FCEEE2"/>
+      <stop offset="85%" stop-color="#F4F8FA"/>
+      <stop offset="100%" stop-color="#E2ECF0"/>
     </radialGradient>
 
-    <!-- Drop Shadow Filter -->
-    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#FF6B35" flood-opacity="0.35"/>
-    </filter>
-
-    <filter id="innerGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#2EC4B6" flood-opacity="0.4"/>
-    </filter>
+    <!-- Lens Rim Gradient -->
+    <linearGradient id="lensRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#142B52"/>
+      <stop offset="50%" stop-color="#0B1B3D"/>
+      <stop offset="100%" stop-color="#050E21"/>
+    </linearGradient>
   </defs>
 
-  <!-- Base Rounded Container with Warm Shadow -->
-  <rect x="24" y="24" width="464" height="464" rx="128" fill="url(#bgGrad)" filter="url(#dropShadow)" />
+  <g filter="url(#shadow)">
+    <!-- 1. Four Teal Target Corners -->
+    <g stroke="#00A896" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Top-Left -->
+      <path d="M 80 75 H 55 V 100" />
+      <!-- Top-Right -->
+      <path d="M 320 75 H 345 V 100" />
+      <!-- Bottom-Left -->
+      <path d="M 80 275 H 55 V 250" />
+      <!-- Bottom-Right -->
+      <path d="M 320 275 H 345 V 250" />
+    </g>
 
-  <!-- Outer Camera Aperture Ring -->
-  <circle cx="256" cy="256" r="185" fill="#172033" opacity="0.95" />
-  
-  <!-- Outer Teal AI Ring -->
-  <circle cx="256" cy="256" r="172" fill="none" stroke="url(#tealGrad)" stroke-width="14" stroke-dasharray="140 30" filter="url(#innerGlow)" />
+    <!-- 2. Magnifying Glass Handle -->
+    <rect x="250" y="225" width="28" height="75" rx="14" fill="url(#lensRim)" transform="rotate(-40 264 262)" />
 
-  <!-- Main Plate Circle -->
-  <circle cx="256" cy="256" r="138" fill="url(#plateGlow)" stroke="#FFFFFF" stroke-width="8" />
+    <!-- 3. Magnifying Glass Outer Lens Body -->
+    <circle cx="195" cy="165" r="95" fill="url(#lensRim)" />
 
-  <!-- Inner Plate Rim Line -->
-  <circle cx="256" cy="256" r="110" fill="none" stroke="#FF6B35" stroke-width="4" stroke-dasharray="8 6" opacity="0.4" />
+    <!-- 4. Inner White Lens Bowl Surface -->
+    <circle cx="195" cy="165" r="76" fill="url(#glassGlow)" stroke="#FFFFFF" stroke-width="4" />
 
-  <!-- AI Viewfinder Target Corners -->
-  <path d="M 160 185 V 160 H 185" stroke="#2EC4B6" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-  <path d="M 327 160 H 352 V 185" stroke="#2EC4B6" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-  <path d="M 160 327 V 352 H 185" stroke="#2EC4B6" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-  <path d="M 327 352 H 352 V 327" stroke="#2EC4B6" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <!-- 5. Food Ingredients inside Lens -->
 
-  <!-- Fork (Left) -->
-  <g fill="#FF6B35">
-    <rect x="210" y="210" width="7" height="60" rx="3.5" />
-    <path d="M 200 210 V 232 C 200 240, 227 240, 227 232 V 210 H 220 V 226 H 214 V 210 H 207 V 226 H 200 Z" />
+    <!-- Green Peas -->
+    <circle cx="215" cy="115" r="6" fill="#27AE60" />
+    <circle cx="228" cy="120" r="7.5" fill="#2ECC71" />
+    <circle cx="218" cy="128" r="6.5" fill="#1ABC9C" />
+
+    <!-- Orange Dot Grain -->
+    <circle cx="185" cy="110" r="5" fill="#E67E22" />
+
+    <!-- Fresh Spinach Leaves (Top Left) -->
+    <g fill="#27AE60">
+      <!-- Left Leaf -->
+      <path d="M 165 145 C 145 130, 140 100, 165 105 C 185 110, 180 140, 165 145 Z" />
+      <!-- Center Main Leaf -->
+      <path d="M 185 140 C 170 120, 175 90, 195 95 C 215 100, 205 135, 185 140 Z" fill="#2ECC71" />
+      <!-- Leaf Veins -->
+      <path d="M 165 140 Q 160 120 162 110" stroke="#1E8449" stroke-width="2.5" fill="none" stroke-linecap="round" />
+      <path d="M 187 135 Q 185 115 188 102" stroke="#27AE60" stroke-width="2.5" fill="none" stroke-linecap="round" />
+    </g>
+
+    <!-- Orange Slices (Right Side) -->
+    <!-- Top Right Orange Slice -->
+    <path d="M 195 165 L 245 125 C 255 145, 245 165, 225 175 Z" fill="#F39C12" />
+    <path d="M 198 162 L 240 128 C 248 144, 240 160, 223 169 Z" fill="#F1C40F" />
+    
+    <!-- Bottom Left Orange Slice -->
+    <path d="M 195 165 L 140 170 C 135 150, 148 135, 168 130 Z" fill="#E67E22" />
+    <path d="M 195 165 L 144 168 C 140 152, 151 139, 168 134 Z" fill="#F39C12" />
+
+    <!-- Red Tomato Slice (Center Foreground) -->
+    <g>
+      <circle cx="195" cy="180" r="26" fill="#E74C3C" stroke="#C0392B" stroke-width="3" />
+      <circle cx="195" cy="180" r="20" fill="#FF4757" />
+      <circle cx="195" cy="180" r="10" fill="#E74C3C" />
+      <!-- Tomato Seeds -->
+      <circle cx="187" cy="174" r="2.5" fill="#F1C40F" />
+      <circle cx="203" cy="174" r="2.5" fill="#F1C40F" />
+      <circle cx="187" cy="186" r="2.5" fill="#F1C40F" />
+      <circle cx="203" cy="186" r="2.5" fill="#F1C40F" />
+    </g>
+
+    <!-- 6. Orange AI Sparkle (Right Side) -->
+    <path d="M 330 165 L 334 180 L 349 184 L 334 188 L 330 203 L 326 188 L 311 184 L 326 180 Z" fill="#FF6B35" />
+    <circle cx="310" cy="205" r="3" fill="#00A896" />
+
+    <!-- 7. Brand Text "NutriSnap AI" -->
+    <text x="50" y="360" font-family="'Outfit', 'Fredoka', 'Segoe UI', sans-serif" font-weight="900" font-size="52" fill="#0B1B3D">
+      NutriSnap <tspan fill="#FF6B35">AI</tspan>
+    </text>
+
+    <!-- 8. Underline Orange Smile Arc -->
+    <path d="M 75 390 Q 200 415 325 390" stroke="#FF6B35" stroke-width="8" fill="none" stroke-linecap="round" />
   </g>
-
-  <!-- Knife / Spoon (Right) -->
-  <g fill="#FF6B35">
-    <rect x="295" y="210" width="7" height="60" rx="3.5" />
-    <path d="M 292 210 C 292 210, 312 214, 312 232 C 312 242, 299 245, 299 245 V 210 Z" />
-  </g>
-
-  <!-- AI Lens Shutter Sparkles -->
-  <path d="M 256 182 L 260 196 L 274 200 L 260 204 L 256 218 L 252 204 L 238 200 L 252 196 Z" fill="#FF9F1C" />
-  <path d="M 320 270 L 323 279 L 332 282 L 323 285 L 320 294 L 317 285 L 308 282 L 317 279 Z" fill="#2EC4B6" />
 </svg>
