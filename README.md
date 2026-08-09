@@ -97,13 +97,15 @@ Repository URL: `https://github.com/YASH-RAJBHAR/food-analyzer-project`
 1. Go to your **Render Dashboard** $\rightarrow$ Click **New +** $\rightarrow$ Select **Static Site** (or **Web Service**).
 2. Connect your GitHub repository (`food-analyzer-project`).
 3. Configure the service settings:
-   - **Name**: `food-analyzer-frontend`
+   - **Name**: `nutrisnap-ai-web`
    - **Root Directory**: `frontend`
    - **Build Command**: `npm run build`
    - **Publish Directory**: `build`
 4. Add **Environment Variables**:
+   - `NODE_VERSION`: `18.20.0`
    - `REACT_APP_BACKEND_URL`: `https://food-analyzer-backend.onrender.com` *(Use your deployed Spring Boot URL)*
 5. Click **Create Static Site**.
+6. Your live site will be accessible at: `https://nutrisnap-ai-web.onrender.com`
 
 ---
 
