@@ -20,8 +20,8 @@ function App() {
     <div className={`app-shell ${darkMode ? "dark-theme" : "light-theme"}`}>
       {/* NutriSnap AI Header Navbar */}
       <header className="cartoon-header">
-        <div className="header-brand" onClick={() => setActiveTab("home")} style={{ cursor: "pointer" }}>
-          <img src="/favicon.svg" alt="NutriSnap AI Logo" className="brand-logo-img" style={{ width: 48, height: 48, borderRadius: 14, filter: "drop-shadow(0 4px 10px rgba(255, 107, 53, 0.35))" }} />
+        <div className="header-brand" onClick={() => setActiveTab("home")} style={{ cursor: "pointer", display: "flex", alignItems: "center", gap: 12 }}>
+          <img src="/favicon.svg" alt="NutriSnap AI Logo" className="brand-logo-img" style={{ width: 46, height: 46, objectFit: "contain" }} />
           <div>
             <h1 className="brand-title">NutriSnap AI</h1>
             <p className="brand-tagline">Snap Your Food. Understand Your Nutrition.</p>
