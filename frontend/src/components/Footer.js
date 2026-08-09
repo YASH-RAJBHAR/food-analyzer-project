@@ -101,8 +101,8 @@ function Footer({ activeTab, setActiveTab }) {
             </div>
 
             <div className="dev-actions">
-              <a href="mailto:yashrajbhar033@gmail.com" className="dev-btn dev-btn-email">
-                ✉️ yashrajbhar033@gmail.com
+              <a href="mailto:yashrajbhar316@gmail.com" className="dev-btn dev-btn-email">
+                ✉️ yashrajbhar316@gmail.com
               </a>
               <a
                 href="https://github.com/YASH-RAJBHAR/food-analyzer-project"
@@ -130,7 +130,7 @@ function Footer({ activeTab, setActiveTab }) {
           ⚠️ <strong>Disclaimer:</strong> NutriSnap AI provides informational nutrition estimates only and is not intended to provide medical advice.
         </div>
         <div className="footer-copyright">
-          NutriSnap AI © {new Date().getFullYear()} • Developed by <strong>Yash Rajbhar</strong> (yashrajbhar033@gmail.com) • AI-Powered Food Recognition & Nutrition Insights 🎉
+          NutriSnap AI © {new Date().getFullYear()} • Developed by <strong>Yash Rajbhar</strong> (yashrajbhar316@gmail.com) • AI-Powered Food Recognition & Nutrition Insights 🎉
         </div>
       </div>
     </footer>
