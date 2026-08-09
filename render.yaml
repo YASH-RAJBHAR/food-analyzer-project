@@ -22,8 +22,9 @@ services:
         value: "*"
 
   # 3. React Frontend Static Site
-  - type: static
+  - type: web
     name: food-analyzer-frontend
+    runtime: static
     rootDir: frontend
     buildCommand: npm run build
     staticPublishPath: build
