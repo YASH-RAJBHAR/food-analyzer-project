@@ -1,52 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
   <defs>
-    <!-- Background Gradient -->
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FF7E47" />
-      <stop offset="100%" stop-color="#FF521B" />
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7A3D" />
+      <stop offset="100%" stop-color="#E54E1B" />
     </linearGradient>
-    
-    <!-- Teal Accent Gradient -->
-    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#2EC4B6" />
-      <stop offset="100%" stop-color="#0F9F90" />
+    <linearGradient id="tealGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#36D7C7" />
+      <stop offset="100%" stop-color="#1BA396" />
     </linearGradient>
-
-    <!-- Gold Sparkle Gradient -->
-    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFD166" />
-      <stop offset="100%" stop-color="#FF9F1C" />
+    <linearGradient id="goldStar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFDF00" />
+      <stop offset="100%" stop-color="#FFA500" />
     </linearGradient>
-
-    <!-- Soft Drop Shadow -->
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#000000" flood-opacity="0.18" />
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.25" />
     </filter>
   </defs>
 
-  <!-- Outer Rounded Squircle Container -->
-  <rect x="6" y="6" width="108" height="108" rx="30" fill="url(#bgGrad)" filter="url(#shadow)" />
+  <!-- Base Squircle background -->
+  <rect x="4" y="4" width="112" height="112" rx="32" fill="url(#orangeGrad)" filter="url(#softGlow)" />
 
-  <!-- Outer Camera Lens Ring (Teal Accent) -->
-  <circle cx="60" cy="60" r="42" fill="none" stroke="url(#tealGrad)" stroke-width="4" stroke-dasharray="14 6" opacity="0.9" />
+  <!-- Outer Camera Aperture Ring -->
+  <circle cx="60" cy="60" r="44" fill="none" stroke="url(#tealGlow)" stroke-width="5" stroke-dasharray="16 6" />
 
-  <!-- Inner White Plate Circle -->
-  <circle cx="60" cy="60" r="34" fill="#FFFFFF" />
+  <!-- Main White Plate Base -->
+  <circle cx="60" cy="60" r="35" fill="#FFFFFF" />
+  <circle cx="60" cy="60" r="28" fill="#FFF8F0" stroke="#FFE0C8" stroke-width="2" />
 
-  <!-- Inner Warm Plate Rim -->
-  <circle cx="60" cy="60" r="28" fill="#FFF9F2" stroke="#FFE3D1" stroke-width="2" />
-
-  <!-- Center Camera Aperture / Fork & Knife Icon -->
   <!-- Fork (Left) -->
-  <path d="M 46 42 V 64 M 42 42 V 53 H 50 V 42" stroke="#FF521B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-  
-  <!-- Knife (Right) -->
-  <path d="M 74 42 V 64 M 74 42 C 80 42, 80 53, 74 53" stroke="#FF521B" stroke-width="3.5" stroke-linecap="round" fill="none" />
+  <path d="M 46 40 V 65 M 41 40 V 52 H 51 V 40" stroke="#E54E1B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" />
 
-  <!-- Center AI Camera Shutter Sparkle Lens -->
-  <circle cx="60" cy="74" r="5" fill="url(#tealGrad)" />
-  
+  <!-- Knife (Right) -->
+  <path d="M 74 40 V 65 M 74 40 C 81 40, 81 52, 74 52" stroke="#E54E1B" stroke-width="4" stroke-linecap="round" fill="none" />
+
+  <!-- Center AI Lens Camera Eye -->
+  <circle cx="60" cy="74" r="5.5" fill="url(#tealGlow)" stroke="#FFFFFF" stroke-width="1.5" />
+
   <!-- Top Right AI Sparkle Star -->
-  <path d="M 84 24 L 86 30 L 92 32 L 86 34 L 84 40 L 82 34 L 76 32 L 82 30 Z" fill="url(#goldGrad)" />
-  <path d="M 30 78 L 31.5 82 L 35.5 83.5 L 31.5 85 L 30 89 L 28.5 85 L 24.5 83.5 L 28.5 82 Z" fill="url(#goldGrad)" opacity="0.85" />
+  <path d="M 88 22 L 90.5 28.5 L 97 L 30.5 31 L 90.5 33.5 L 88 40 L 85.5 33.5 L 79 L 85.5 28.5 Z" fill="url(#goldStar)" />
 </svg>
