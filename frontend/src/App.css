@@ -1040,18 +1040,84 @@ body {
 
 /* PREMIUM CARTOON SAAS FOOTER STYLES */
 .cartoon-footer-wrapper {
-  margin-top: 40px;
+  margin-top: 48px;
   background: var(--card-bg);
   border: 3px solid var(--card-border);
   border-radius: 28px;
-  padding: 32px 28px 20px;
+  padding: 24px 28px 20px;
   box-shadow: var(--cartoon-shadow);
   transition: all 0.3s ease;
 }
 
+/* Top Banner Bar */
+.footer-top-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+  border-bottom: 2px dashed var(--card-border);
+}
+
+.footer-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--pill-bg);
+  border: 2px solid var(--card-border);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  background-color: #2ec4b6;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #2ec4b6;
+  animation: pulse-green 1.8s infinite;
+}
+
+@keyframes pulse-green {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(46, 196, 182, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(46, 196, 182, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(46, 196, 182, 0); }
+}
+
+.footer-mascot-quote {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  background: var(--pill-bg);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1.5px solid var(--card-border);
+}
+
+.footer-top-btn {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: #ffffff;
+  border: none;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255, 159, 28, 0.35);
+  transition: transform 0.2s ease;
+}
+
+.footer-top-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
 .cartoon-footer-container {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  grid-template-columns: 1.3fr 1fr 1fr 1.2fr;
   gap: 28px;
   padding-bottom: 24px;
   border-bottom: 2px dashed var(--card-border);
@@ -1110,6 +1176,23 @@ body {
   box-shadow: 0 4px 12px rgba(255, 159, 28, 0.3);
 }
 
+.footer-mini-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.mini-stat {
+  background: var(--pill-bg);
+  border: 1.5px solid var(--card-border);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 14px;
+  color: var(--text-main);
+}
+
 .footer-col-header {
   font-size: 1.1rem;
   font-weight: 800;
@@ -1161,6 +1244,77 @@ body {
   font-weight: 600;
 }
 
+/* Developer Card Styling */
+.footer-dev-card {
+  background: var(--pill-bg);
+  padding: 14px;
+  border-radius: 20px;
+  border: 2px solid var(--card-border);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.dev-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.dev-avatar {
+  font-size: 1.8rem;
+  background: var(--card-bg);
+  padding: 4px 8px;
+  border-radius: 14px;
+  border: 1.5px solid var(--card-border);
+}
+
+.dev-name {
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.dev-role {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.dev-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dev-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 14px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.dev-btn:hover {
+  transform: translateY(-2px);
+}
+
+.dev-btn-email {
+  background: linear-gradient(135deg, #ff7a29, #ff9f1c);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(255, 122, 41, 0.3);
+}
+
+.dev-btn-github {
+  background: var(--card-bg);
+  color: var(--text-main);
+  border: 2px solid var(--card-border);
+}
+
 .footer-tech-stack {
   display: flex;
   flex-wrap: wrap;
@@ -1175,7 +1329,6 @@ body {
   font-weight: 700;
   padding: 4px 10px;
   border-radius: 14px;
-
   transition: transform 0.2s ease;
 }
 
@@ -1207,4 +1360,5 @@ body {
   color: var(--text-muted);
   font-weight: 600;
 }
+
 

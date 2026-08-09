@@ -13,8 +13,26 @@ function Footer({ activeTab, setActiveTab }) {
     { id: "analytics", label: "Analytics", icon: "📈" }
   ];
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="cartoon-footer-wrapper">
+      {/* Top Banner: Mascot Quote & Status */}
+      <div className="footer-top-banner">
+        <div className="footer-status-pill">
+          <span className="status-dot"></span>
+          <span>AI Systems 100% Operational & Cloud Synced</span>
+        </div>
+        <div className="footer-mascot-quote">
+          <span>🤖 <strong>Chef Bot says:</strong> "Snap any dish (Vada Pav, Dosa, Pizza) to unlock transparent calories & health scoring!"</span>
+        </div>
+        <button className="footer-top-btn" onClick={scrollToTop} title="Scroll to top">
+          ⬆️ Back to Top
+        </button>
+      </div>
+
       <div className="cartoon-footer-container">
         {/* Column 1: Brand & Mascot */}
         <div className="footer-brand-col">
@@ -25,8 +43,13 @@ function Footer({ activeTab, setActiveTab }) {
           <p className="footer-tagline">
             Your Playful AI Food Analyzer & Smart Nutrition Assistant. Snap any meal to unlock instant calories, macros, diet compatibility & recipes!
           </p>
-          <div className="footer-badge-pill">
+          <div className="footer-badge-pill" style={{ marginBottom: 12 }}>
             🇮🇳 Fine-tuned for Indian & Global Regional Cuisine
+          </div>
+          <div className="footer-mini-stats">
+            <span className="mini-stat">🍲 200+ Dishes</span>
+            <span className="mini-stat">✨ 98% Vision AI</span>
+            <span className="mini-stat">🥗 14-Diet Matrix</span>
           </div>
         </div>
 
@@ -40,7 +63,7 @@ function Footer({ activeTab, setActiveTab }) {
                   className={`footer-nav-btn ${activeTab === item.id ? "active" : ""}`}
                   onClick={() => {
                     if (setActiveTab) setActiveTab(item.id);
-                    window.scrollTo({ top: 0, behavior: "smooth" });
+                    scrollToTop();
                   }}
                 >
                   <span style={{ marginRight: 6 }}>{item.icon}</span>
@@ -61,34 +84,42 @@ function Footer({ activeTab, setActiveTab }) {
             <li>🏷️ Barcode & Label OCR Scan</li>
             <li>💧 Hydration & Goal Tracker</li>
             <li>🧠 Smart AI Nutrition Coach</li>
-            <li>🛡️ 100% Strict Object Matching</li>
+            <li>🛡️ Strict Dish Image Matching</li>
           </ul>
         </div>
 
-        {/* Column 4: Developer & Contact */}
+        {/* Column 4: Developer Profile & Contact */}
         <div className="footer-links-col">
           <h4 className="footer-col-header">Developer & Contact 👨‍💻</h4>
-          <div className="footer-dev-card" style={{ background: "var(--pill-bg)", padding: 14, borderRadius: 16, border: "2px solid var(--card-border)" }}>
-            <p style={{ fontWeight: 800, fontSize: "0.95rem", marginBottom: 6, color: "var(--primary-color)" }}>
-              👨‍💻 Developer: Yash Rajbhar
-            </p>
-            <p style={{ fontSize: "0.86rem", marginBottom: 6 }}>
-              ✉️ <strong>Contact:</strong>{" "}
-              <a href="mailto:yashrajbhar033@gmail.com" style={{ color: "var(--secondary-color)", fontWeight: 700, textDecoration: "none" }}>
-                yashrajbhar033@gmail.com
+          <div className="footer-dev-card">
+            <div className="dev-header">
+              <span className="dev-avatar">👨‍💻</span>
+              <div>
+                <h5 className="dev-name">Yash Rajbhar</h5>
+                <span className="dev-role">Full-Stack & AI Developer</span>
+              </div>
+            </div>
+
+            <div className="dev-actions">
+              <a href="mailto:yashrajbhar033@gmail.com" className="dev-btn dev-btn-email">
+                ✉️ yashrajbhar033@gmail.com
               </a>
-            </p>
-            <p style={{ fontSize: "0.86rem" }}>
-              🐙 <strong>GitHub:</strong>{" "}
-              <a href="https://github.com/YASH-RAJBHAR/food-analyzer-project" target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-main)", fontWeight: 700 }}>
-                YASH-RAJBHAR
+              <a
+                href="https://github.com/YASH-RAJBHAR/food-analyzer-project"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="dev-btn dev-btn-github"
+              >
+                🐙 GitHub Repository
               </a>
-            </p>
+            </div>
           </div>
-          <div className="footer-tech-stack" style={{ marginTop: 12 }}>
+
+          <div className="footer-tech-stack" style={{ marginTop: 14 }}>
             <span className="tech-chip">🚀 Spring Boot 3</span>
             <span className="tech-chip">🐍 Python PyTorch AI</span>
-            <span className="tech-chip">⚛️ React 18 SaaS UI</span>
+            <span className="tech-chip">⚛️ React 18 SaaS</span>
+            <span className="tech-chip">🤖 Gemini 1.5 Agent</span>
           </div>
         </div>
       </div>
