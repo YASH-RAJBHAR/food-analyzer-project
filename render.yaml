@@ -2,7 +2,7 @@ services:
   # 1. Python AI Service
   - type: web
     name: food-analyzer-ai-service
-    env: python
+    runtime: python
     rootDir: ai-service
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn --bind 0.0.0.0:$PORT app:app
@@ -10,13 +10,11 @@ services:
       - key: PORT
         value: 5001
 
-  # 2. Java Spring Boot Backend
+  # 2. Java Spring Boot Backend (Uses backend/Dockerfile with Java 21 & Maven)
   - type: web
     name: food-analyzer-backend
-    env: java
+    runtime: docker
     rootDir: backend
-    buildCommand: chmod +x mvnw && ./mvnw clean package -DskipTests
-    startCommand: java -jar target/food-analyzer-backend-0.0.1-SNAPSHOT.jar
     envVars:
       - key: PORT
         value: 8080
@@ -24,9 +22,8 @@ services:
         value: "*"
 
   # 3. React Frontend Static Site
-  - type: web
+  - type: static
     name: food-analyzer-frontend
-    env: static
     rootDir: frontend
     buildCommand: npm run build
     staticPublishPath: build
