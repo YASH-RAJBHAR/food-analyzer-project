@@ -12,17 +12,17 @@ Welcome to **NutriSnap AI**, a full-stack, AI-powered food recognition, nutritio
 
 ## 🌟 Key Features Overview
 
-| Feature Tab | Description | Visual Preview |
-| :--- | :--- | :---: |
-| **🏠 Home & Scan** | AI Vision Scanner, Live Camera Viewfinder & Dish Recognition | ![Vada Pav](frontend/public/images/dishes/vada_pav.jpg) |
-| **🇮🇳 Indian Special** | Fine-tuned AI model for Indian street food (Vada Pav, Pav Bhaji, Dosa, Biryani, Chole Bhature, Samosa) | ![Chole Bhature](frontend/public/images/dishes/chole_bhature.jpg) |
-| **🌐 World Food** | Global regional dish identification (Pizza, Cheeseburger, Fresh Sushi) | ![Pizza](frontend/public/images/dishes/pizza.jpg) |
-| **📓 Food Diary** | Daily calorie budget progress bar (2000 kcal), meal logging & history table | ![Poha](frontend/public/images/dishes/poha.jpg) |
-| **🥗 14-Diet Matrix** | Evaluates 14 dietary rules in real-time (Vegan, Keto, Low Carb, Diabetic, Gluten-Free, Halal, Kosher) | ![Masala Dosa](frontend/public/images/dishes/masala_dosa.jpg) |
-| **📷 Barcode / OCR** | Live UPC/EAN OpenFoodFacts barcode lookup + ingredient label OCR scanner | ![Rajma Chawal](frontend/public/images/dishes/rajma_chawal.jpg) |
-| **🎯 Goals & Water** | Interactive hydration log (`+250ml`), target calorie calculator & macro sliders | ![Chicken Biryani](frontend/public/images/dishes/chicken_biryani.jpg) |
-| **🤖 AI Coach** | Chat with Chef Bot powered by Gemini 1.5 Flash + typo-tolerant knowledge engine | ![Pani Puri](frontend/public/images/dishes/pani_puri.jpg) |
-| **📈 Analytics** | Upload history trends, macro pie chart breakdown & average health score | ![Samosa](frontend/public/images/dishes/samosa.jpg) |
+| Feature Tab | Description | Key Capability |
+| :--- | :--- | :--- |
+| **🏠 Home & Scan** | AI Vision Scanner & Live Camera Viewfinder | Instant dish detection, health score (0-100) & verified photo match |
+| **🇮🇳 Indian Special** | Fine-tuned AI model for Indian street food & regional cuisine | One-click instant scanning for Vada Pav, Dosa, Biryani & Samosas |
+| **🌐 World Food** | Global regional food identification | One-click scanning for Pizza, Cheeseburgers, Sushi & International dishes |
+| **📓 Food Diary** | Daily meal logging & 2000 kcal budget tracking | Log Breakfast, Lunch, Snacks, Dinner & view history log table |
+| **🥗 14-Diet Matrix** | Real-time 14-Diet compatibility engine | Test any food against Vegan, Keto, Low Carb, Diabetic & Gluten-Free rules |
+| **📷 Barcode / OCR** | Live UPC barcode lookup & label OCR scanner | Fetch live product info from OpenFoodFacts & extract ingredients |
+| **🎯 Goals & Water** | Daily hydration logger & target macro calculator | Quick `+250ml` water logging, calorie budget & macro sliders |
+| **🤖 AI Coach** | Chat assistant powered by Gemini 1.5 Flash API | Typo-tolerant AI nutrition advice & recipe recommendations |
+| **📈 Analytics** | Upload history trends & nutrition analytics | View macro pie charts, average health score & searchable log table |
 
 ---
 
