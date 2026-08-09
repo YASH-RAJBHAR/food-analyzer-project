@@ -1,0 +1,27 @@
+package com.example.foodanalyzer.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.example.foodanalyzer.service.FoodService;
+
+@CrossOrigin(origins = "*")
+@RestController
+@RequestMapping("/food")
+public class FoodController {
+
+    @Autowired
+    private FoodService foodService;
+
+    @PostMapping("/analyze")
+    public String analyzeFood(@RequestParam("image") MultipartFile file) {
+        return foodService.analyze(file);
+    }
+
+    // Test API
+    @GetMapping("/test")
+    public String test() {
+        return "API Working";
+    }
+}
