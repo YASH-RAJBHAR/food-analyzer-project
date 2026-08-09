@@ -1,4 +1,4 @@
--- Production Database Schema for AI-Powered Global Food Analyzer
+-- Production Database Schema for NutriSnap AI
 CREATE DATABASE IF NOT EXISTS food_analyzer CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE food_analyzer;
 

@@ -5,7 +5,7 @@ function AiChatAssistant() {
   const [messages, setMessages] = useState([
     {
       sender: "ai",
-      text: "Hello! I am your AI Food Buddy & Nutrition Assistant 🤖. Ask me anything about food health, diabetic suitability, muscle building meals, recipes, or allergens!",
+      text: "Hello! I am your NutriSnap AI Coach & Nutrition Assistant 🤖. Ask me anything about food health, diabetic suitability, muscle building meals, recipes, or allergens!",
     },
   ]);
   const [input, setInput] = useState("");

@@ -13,7 +13,7 @@
     <artifactId>food-analyzer-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>food-analyzer-backend</name>
-    <description>Spring Boot backend for Smart Food Analyzer</description>
+    <description>Spring Boot backend for NutriSnap AI</description>
 
     <properties>
         <java.version>21</java.version>

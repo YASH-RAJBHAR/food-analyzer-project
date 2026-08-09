@@ -741,7 +741,7 @@ def ask_ai_coach_agent(question):
             genai.configure(api_key=GEMINI_API_KEY)
             model = genai.GenerativeModel("gemini-1.5-flash")
             system_prompt = (
-                "You are Chef Bot 🤖, an expert AI Food & Nutrition Agent for FoodAI Buddy. "
+                "You are Chef Bot 🤖, an expert AI Food & Nutrition Agent for NutriSnap AI. "
                 "Provide friendly, encouraging, and medically-accurate food, calorie, macro (protein, carbs, fats), "
                 "diet compatibility (Keto, Vegan, Diabetic), and fitness nutrition advice. "
                 "Always include specific nutritional values when a food or dish is mentioned."

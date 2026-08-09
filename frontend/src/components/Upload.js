@@ -349,8 +349,8 @@ function Upload() {
               <div className="celebration-cartoon-banner" style={{ gridColumn: "1 / -1" }}>
                 <span className="party-pop">🎉</span>
                 <div>
-                  <h3>FOOD IDENTIFIED! 🥳</h3>
-                  <p>Matched <strong>{analysis.predictedFood}</strong> ({analysis.cuisine || "Indian Cuisine"}) with <strong>{Math.round(analysis.confidence)}% precision!</strong></p>
+                  <h3>Food Identified! 🥳</h3>
+                  <p>NutriSnap AI recognized <strong>{analysis.predictedFood}</strong> ({analysis.cuisine || "Global Cuisine"}) with <strong>{Math.round(analysis.confidence)}% precision!</strong></p>
                 </div>
               </div>
 

@@ -1,6 +1,6 @@
-# 🤖🍴 FoodAI Buddy — Smart Food Analyzer & AI Coach
+# 🍽️ NutriSnap AI — AI Food & Nutrition Analyzer
 
-A full-stack AI-powered food recognition, nutrition analysis, and health coaching platform fine-tuned for Indian & Global regional cuisine.
+**Snap Your Food. Understand Your Nutrition.** A full-stack AI-powered food recognition, nutrition analysis, and health coaching platform fine-tuned for Indian & Global regional cuisine.
 
 ---
 
@@ -80,7 +80,7 @@ Repository URL: `https://github.com/YASH-RAJBHAR/food-analyzer-project`
    - **Region**: Same region as AI Service
    - **Root Directory**: `backend`
    - **Runtime**: `Java` (or `Docker` / `Environment Native`)
-   - **Build Command**: `chmod +x mvnw && ./mvnw clean package -DskipTests`
+   - **Build Command**: `./mvnw clean package -DskipTests`
    - **Start Command**: `java -jar target/food-analyzer-backend-0.0.1-SNAPSHOT.jar`
 4. Add **Environment Variables**:
    - `PORT`: `8080`

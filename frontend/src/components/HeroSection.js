@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function HeroSection({ onScanClick, onExploreClick }) {
-  const [mascotQuote, setMascotQuote] = useState("Hi there! I'm Chef Bot 🤖! Snap any dish (Vada Pav, Dosa, Pizza) & I'll calculate your exact calories & health score! 🎉");
+  const [mascotQuote, setMascotQuote] = useState("Hi there! I'm Chef Bot 🤖! Snap any dish with NutriSnap AI to get instant calories, macros & diet insights! 🎉");
 
   const floatingFoods = [
     { emoji: "🍕", style: { top: "10%", left: "5%", animationDelay: "0s" } },
@@ -15,10 +15,10 @@ function HeroSection({ onScanClick, onExploreClick }) {
   ];
 
   const mascotQuotes = [
-    "Hi there! I'm Chef Bot 🤖! Snap any dish (Vada Pav, Dosa, Pizza) & I'll tell you exact calories & health score! 🎉",
-    "Did you know? Vada Pav is Mumbai's ultimate street food with ~290 kcal! 🥪",
+    "Hi there! I'm Chef Bot 🤖! Snap any dish with NutriSnap AI to get instant calories, macros & diet insights! 🎉",
+    "NutriSnap AI recognizes 200+ global & Indian regional dishes with high precision! 🥪",
     "I can check 14 dietary rules like Vegan, Keto, Gluten-Free & Diabetic Friendly! 🥑",
-    "Scan a barcode or nutrition panel anytime! I read packaged food labels too! 📦"
+    "Scan a barcode or nutrition panel anytime! NutriSnap AI reads packaged labels too! 📦"
   ];
 
   const cycleQuote = () => {
@@ -37,10 +37,13 @@ function HeroSection({ onScanClick, onExploreClick }) {
 
       <div className="hero-cartoon-content">
         <div className="hero-text-side">
-          <div className="hero-mini-badge">✨ Your Cartoon AI Food Buddy</div>
+          <div className="hero-mini-badge">✨ AI-Powered Food Recognition</div>
           <h1 className="hero-main-title">What's on your plate? 🍽️</h1>
-          <p className="hero-main-subtitle">
-            Snap it. Scan it. Understand it. Instant worldwide food identification, transparent 0-100 health scoring & 14-diet compatibility.
+          <h3 className="hero-main-subtitle" style={{ fontSize: "1.35rem", fontWeight: 800, color: "var(--primary-color)", marginBottom: 8 }}>
+            Snap it. Scan it. Understand it.
+          </h3>
+          <p className="hero-supporting-text" style={{ fontSize: "0.95rem", color: "var(--text-muted)", lineHeight: 1.6, marginBottom: 20 }}>
+            NutriSnap AI uses artificial intelligence to recognize food from around the world and provide nutrition, ingredients, allergens, diet compatibility and health insights.
           </p>
 
           <div className="hero-action-row">

@@ -1,18 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <circle cx="50" cy="50" r="48" fill="#ff7a29" />
-  <circle cx="50" cy="50" r="42" fill="#ffffff" />
-  <!-- Chef Hat -->
-  <path d="M 32 32 C 30 18, 42 14, 50 14 C 58 14, 70 18, 68 32 Z" fill="#ff9f1c" />
-  <rect x="36" y="30" width="28" height="8" rx="3" fill="#ff7a29" />
-  <!-- Mascot Robot Face -->
-  <rect x="28" y="40" width="44" height="34" rx="10" fill="#2ec4b6" />
-  <!-- Eyes -->
-  <circle cx="40" cy="54" r="5" fill="#ffffff" />
-  <circle cx="40" cy="54" r="2.5" fill="#0f172a" />
-  <circle cx="60" cy="54" r="5" fill="#ffffff" />
-  <circle cx="60" cy="54" r="2.5" fill="#0f172a" />
-  <!-- Smile -->
-  <path d="M 42 64 Q 50 70 58 64" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" />
-  <!-- Sparkles -->
-  <text x="70" y="30" font-size="16">✨</text>
+  <circle cx="50" cy="50" r="48" fill="#FF6B35" />
+  <circle cx="50" cy="50" r="41" fill="#FFFFFF" />
+  <!-- Outer Plate Rim -->
+  <circle cx="50" cy="50" r="32" stroke="#2EC4B6" stroke-width="3" fill="none" stroke-dasharray="8 4" />
+  <!-- Plate Center -->
+  <circle cx="50" cy="50" r="22" fill="#FFF9F2" />
+  <!-- Fork and Knife AI Icon -->
+  <path d="M 38 35 V 50 M 35 35 V 43 H 41 V 35" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round" fill="none" />
+  <path d="M 60 35 V 50 M 60 35 C 64 35, 64 43, 60 43" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round" fill="none" />
+  <!-- AI Sparkles -->
+  <circle cx="50" cy="62" r="3" fill="#2EC4B6" />
+  <path d="M 50 56 L 50 68 M 44 62 L 56 62" stroke="#2EC4B6" stroke-width="2" stroke-linecap="round" />
 </svg>

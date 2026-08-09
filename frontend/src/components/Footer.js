@@ -37,11 +37,11 @@ function Footer({ activeTab, setActiveTab }) {
         {/* Column 1: Brand & Mascot */}
         <div className="footer-brand-col">
           <div className="footer-logo-row">
-            <span className="footer-logo-icon">🤖🍴</span>
-            <span className="footer-logo-title">FoodAI Buddy</span>
+            <span className="footer-logo-icon">🍽️</span>
+            <span className="footer-logo-title">NutriSnap AI</span>
           </div>
           <p className="footer-tagline">
-            Your Playful AI Food Analyzer & Smart Nutrition Assistant. Snap any meal to unlock instant calories, macros, diet compatibility & recipes!
+            Snap Your Food. Understand Your Nutrition. AI-powered food recognition & nutrition insights for global & regional cuisine.
           </p>
           <div className="footer-badge-pill" style={{ marginBottom: 12 }}>
             🇮🇳 Fine-tuned for Indian & Global Regional Cuisine
@@ -127,10 +127,10 @@ function Footer({ activeTab, setActiveTab }) {
       {/* Bottom Legal & Copyright Bar */}
       <div className="footer-bottom-bar">
         <div className="footer-disclaimer">
-          ⚠️ <strong>Disclaimer:</strong> FoodAI Buddy provides informational nutrition estimates only and is not intended to provide medical advice.
+          ⚠️ <strong>Disclaimer:</strong> NutriSnap AI provides informational nutrition estimates only and is not intended to provide medical advice.
         </div>
         <div className="footer-copyright">
-          © {new Date().getFullYear()} <strong>FoodAI Buddy</strong> • Developed by <strong>Yash Rajbhar</strong> (yashrajbhar033@gmail.com) • Built with ❤️ for Foodies Worldwide 🎉
+          NutriSnap AI © {new Date().getFullYear()} • Developed by <strong>Yash Rajbhar</strong> (yashrajbhar033@gmail.com) • AI-Powered Food Recognition & Nutrition Insights 🎉
         </div>
       </div>
     </footer>

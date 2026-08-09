@@ -17,19 +17,19 @@
    COLOR SYSTEM - Cartoon + AI + Food + Modern SaaS
    ==================================================== */
 .light-theme {
-  --bg-gradient: linear-gradient(135deg, #fffdfa 0%, #fef6eb 50%, #fffdf4 100%);
+  --bg-gradient: linear-gradient(135deg, #fff9f2 0%, #ffeedd 50%, #fff9f2 100%);
   --card-bg: #ffffff;
-  --card-border: rgba(255, 122, 41, 0.25);
-  --text-main: #1e293b;
+  --card-border: rgba(255, 107, 53, 0.22);
+  --text-main: #172033;
   --text-muted: #64748b;
-  --primary-color: #ff7a29;
-  --primary-hover: #f06410;
-  --secondary-color: #ffca3a;
+  --primary-color: #ff6b35;
+  --primary-hover: #e55a27;
+  --secondary-color: #2ec4b6;
   --success-color: #2ec4b6;
   --warning-color: #ff9f1c;
   --danger-color: #ff5964;
-  --pill-bg: #fff6ed;
-  --card-shadow: 0 14px 36px rgba(255, 122, 41, 0.12);
+  --pill-bg: #fff1e8;
+  --card-shadow: 0 14px 36px rgba(255, 107, 53, 0.12);
 }
 
 .dark-theme {

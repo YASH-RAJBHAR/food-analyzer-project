@@ -18,13 +18,13 @@ function App() {
 
   return (
     <div className={`app-shell ${darkMode ? "dark-theme" : "light-theme"}`}>
-      {/* Cartoon AI Header Navbar */}
+      {/* NutriSnap AI Header Navbar */}
       <header className="cartoon-header">
         <div className="header-brand" onClick={() => setActiveTab("home")} style={{ cursor: "pointer" }}>
-          <span className="brand-logo">🍴</span>
+          <span className="brand-logo">🍽️</span>
           <div>
-            <h1 className="brand-title">FoodAI Buddy</h1>
-            <p className="brand-tagline">Cartoon AI Food Analyzer & Nutrition Assistant</p>
+            <h1 className="brand-title">NutriSnap AI</h1>
+            <p className="brand-tagline">Snap Your Food. Understand Your Nutrition.</p>
           </div>
         </div>
 

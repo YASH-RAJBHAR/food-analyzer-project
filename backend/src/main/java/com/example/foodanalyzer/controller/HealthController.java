@@ -15,7 +15,7 @@ public class HealthController {
     public ResponseEntity<Map<String, String>> healthCheck() {
         return ResponseEntity.ok(Map.of(
             "status", "UP",
-            "service", "Food Analyzer Spring Boot Backend",
+            "service", "NutriSnap AI Spring Boot Backend",
             "environment", "Production / Render"
         ));
     }
