@@ -26,6 +26,20 @@ Welcome to **NutriSnap AI**, a full-stack, AI-powered food recognition, nutritio
 
 ---
 
+## 📸 Website UI & Features Showcase
+
+### 1. Main AI Vision Scanner & Dish Analysis View
+*Snap or upload any dish to trigger instant AI identification, health score 0-100, macronutrient breakdown & verified food image matching.*
+
+![NutriSnap AI Main Hero & Scanner UI](frontend/public/images/ui/nutrisnap_hero_preview.png)
+
+### 2. Features Dashboard & 14-Diet Compatibility Matrix
+*Real-time 14-Diet evaluation (Vegan, Keto, Low Carb, Diabetic, Gluten-Free), Food Diary meal tracking, barcode scanner & AI Coach Agent.*
+
+![NutriSnap AI Features Dashboard UI](frontend/public/images/ui/nutrisnap_dashboard_preview.png)
+
+---
+
 ## 🏗️ System Architecture & Data Flow
 
 ```
