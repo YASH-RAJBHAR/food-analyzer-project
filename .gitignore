@@ -6,15 +6,34 @@ __pycache__/
 
 # Virtual environments
 venv/
+.venv/
+ai-service/venv/
 .env
-
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.pyc
 
 # Local environment files
 .env
+.env.local
+.env.*.local
 
 # Render and local build artifacts
 instance/
 *.log
+backend/data/
+*.db
+*.mv.db
+ai-service/uploads/
+
+# IDE / editor metadata
+.metadata/
+.vscode/
+
+# Node and build
+frontend/node_modules/
+frontend/build/
+
+# Java build artifacts
+backend/target/
+
+# System files
+.DS_Store
+Thumbs.db
