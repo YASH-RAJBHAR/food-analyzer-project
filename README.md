@@ -28,15 +28,72 @@ Welcome to **NutriSnap AI**, a full-stack, AI-powered food recognition, nutritio
 
 ## 📸 Website UI & Features Showcase
 
-### 1. Main AI Vision Scanner & Dish Analysis View
-*Snap or upload any dish to trigger instant AI identification, health score 0-100, macronutrient breakdown & verified food image matching.*
+<!-- ==============================================================================
+     SCREENSHOT INSTRUCTIONS:
+     Save your screenshots inside: frontend/public/images/ui/ using these exact names:
+     - 01_hero_scanner.png
+     - 02_analysis_report.png
+     - 03_indian_showcase.png
+     - 04_diet_matrix.png
+     - 05_food_diary.png
+     - 06_barcode_ocr.png
+     - 07_ai_coach.png
+     - 08_analytics.png
+     ============================================================================== -->
 
-![NutriSnap AI Main Hero & Scanner UI](frontend/public/images/ui/nutrisnap_hero_preview.png)
+### 1. Main Home & AI Vision Scanner
+*Top navbar with NutriSnap AI logo, orange hero banner ("What's on your plate?") and central image upload scanner card.*
 
-### 2. Features Dashboard & 14-Diet Compatibility Matrix
-*Real-time 14-Diet evaluation (Vegan, Keto, Low Carb, Diabetic, Gluten-Free), Food Diary meal tracking, barcode scanner & AI Coach Agent.*
+![1. Main Home & AI Vision Scanner](frontend/public/images/ui/01_hero_scanner.png)
 
-![NutriSnap AI Features Dashboard UI](frontend/public/images/ui/nutrisnap_dashboard_preview.png)
+---
+
+### 2. AI Dish Identification & Health Score Report
+*Analysis report showing recognized dish name, AI precision %, health score (0-100), macronutrient breakdown & verified dish photo.*
+
+![2. AI Dish Identification Report](frontend/public/images/ui/02_analysis_report.png)
+
+---
+
+### 3. Indian Regional Special Showcase
+*Fine-tuned Indian street food showcase grid (Vada Pav, Pav Bhaji, Masala Dosa, Biryani, Chole Bhature, Samosa).*
+
+![3. Indian Regional Special Showcase](frontend/public/images/ui/03_indian_showcase.png)
+
+---
+
+### 4. 14-Diet Compatibility Matrix
+*Real-time dietary rule matrix evaluation with interactive food selector bar (Vegan, Keto, Low Carb, Diabetic Friendly, Gluten Free, Halal).*
+
+![4. 14-Diet Compatibility Matrix](frontend/public/images/ui/04_diet_matrix.png)
+
+---
+
+### 5. Food Diary & Daily Calorie Budget
+*Daily 2000 kcal progress bar, meal breakdown cards (Breakfast, Lunch, Snacks, Dinner) and meal history log.*
+
+![5. Food Diary & Daily Calorie Budget](frontend/public/images/ui/05_food_diary.png)
+
+---
+
+### 6. Barcode & Ingredient Label OCR Scanner
+*Live UPC/EAN OpenFoodFacts barcode product lookup and packaged food ingredient label OCR scanner.*
+
+![6. Barcode & Ingredient Label OCR Scanner](frontend/public/images/ui/06_barcode_ocr.png)
+
+---
+
+### 7. Smart AI Nutrition Coach
+*Interactive nutrition chat assistant powered by Gemini 1.5 Flash + typo-tolerant AI knowledge engine.*
+
+![7. Smart AI Nutrition Coach](frontend/public/images/ui/07_ai_coach.png)
+
+---
+
+### 8. Analytics & Nutrition Trends
+*Upload history statistics, macro pie chart breakdown, average health score, and searchable history log table.*
+
+![8. Analytics & Nutrition Trends](frontend/public/images/ui/08_analytics.png)
 
 ---
 
