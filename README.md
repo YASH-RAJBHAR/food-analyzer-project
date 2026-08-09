@@ -80,7 +80,7 @@ Repository URL: `https://github.com/YASH-RAJBHAR/food-analyzer-project`
    - **Region**: Same region as AI Service
    - **Root Directory**: `backend`
    - **Runtime**: `Java` (or `Docker` / `Environment Native`)
-   - **Build Command**: `./mvnw clean package -DskipTests`
+   - **Build Command**: `chmod +x mvnw && ./mvnw clean package -DskipTests`
    - **Start Command**: `java -jar target/food-analyzer-backend-0.0.1-SNAPSHOT.jar`
 4. Add **Environment Variables**:
    - `PORT`: `8080`
